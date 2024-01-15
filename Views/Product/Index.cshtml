@@ -1,0 +1,100 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Self_Practice.Models.DBEntities.Product
+@* @{
+    ViewData["Title"] = "Product List";
+}
+
+<h3>@ViewData["Title"]</h3>
+<hr />
+<div class="text-xl-start">
+    <button class="btn btn-primary mb-2" id="btnAdd"> Add New Product</button>
+
+</div>
+<div class="container">
+    <table class="table table-success table-striped table-responsive table-hover ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tblBody">
+        </tbody>
+    </table>
+</div>
+
+
+<script src="~/js/product.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script> *@
+
+@{
+    ViewData["Title"] = "Prodcut list";
+}
+
+<h3>@ViewData["Title"]</h3>
+<hr />
+<div class="text-xl-start">
+    <button class="btn btn-primary mb-2" id="btnAdd"> Add New Product</button>
+
+</div>
+<div class="container">
+    <table class="table table-success table-striped table-responsive table-hover ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tblBody">
+        </tbody>
+    </table>
+</div>
+
+<div class="modal" id="ProductModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle"></h3>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" asp-for="Id" value=0/>
+                <div class="mb-2">
+                    <label asp-for="ProductName"></label>
+                    <input type="text" asp-for="ProductName" class="form-control" placeholder="Prodcut Name"/>
+                </div>
+                <div class="mb-2">
+                    <label asp-for="Price"></label>
+                    <input type="number" asp-for="Price" class="form-control" placeholder="Prodcut Name" />
+                </div>
+                <div class="mb-2">
+                    <label asp-for="Qty"></label>
+                    <input type="number" asp-for="Qty" class="form-control" placeholder="Prodcut Name" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary mb-2" id=" Save" onclick="Insert()";>Save</button>
+                <button class="btn btn-success mb-2" id=" Update"  onclick="Update()" style="display:none";>Update</button>
+                <button class="btn btn-danger mb-2" id=" Close" onclick="HideModal()";>Close</button>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<script src="~/js/productjs.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
