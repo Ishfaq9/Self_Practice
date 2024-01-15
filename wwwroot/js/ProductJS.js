@@ -1,5 +1,7 @@
 ﻿//$(function () {
 
+const { ajax } = require("jquery");
+
 //    GetProducts();
 //});
 
@@ -98,4 +100,24 @@ $('#Close').on('click', function () {
 });
 function HideModal() {
 $('#ProductModal').modal('hide');
+}
+
+//
+function Insert() {
+    var formData = {
+        id: $('#Id').val(),
+        productName: $('#ProductName').val(),
+        price: $('#Price').val(),
+        qty: $('#Qty').val()
+
+    };
+
+    $.ajax({
+        url: '/product/Insert',
+        type:'post',
+        data: formData,
+
+    });
+
+
 }
